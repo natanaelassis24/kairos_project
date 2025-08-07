@@ -1,0 +1,3 @@
+C:/Users/natan/Downloads/kairos_project/build/CMakeFiles/kairos.dir
+C:/Users/natan/Downloads/kairos_project/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/natan/Downloads/kairos_project/build/CMakeFiles/ZERO_CHECK.dir

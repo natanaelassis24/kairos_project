@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "*.tpp": "cpp"
+  },
+  "python.defaultInterpreterPath": "python3",
+  "cmake.configureOnOpen": true,
+  "C_Cpp.errorSquiggles": "disabled"
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sidebar Responsiva</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="sidebar collapsed" id="sidebar">
+
+    <div class="user-info" id="user-info">
+      <!-- Conteúdo injetado via JS -->
+    </div>
+
+    <div class="menu">
+      <div class="section-title">Menu</div>
+      <a href="#" data-action="dashboard" class="active"><span class="material-icons">dashboard</span><span class="label">Painel</span></a>
+      <a href="#" data-action="calendar"><span class="material-icons">calendar_today</span><span class="label">Calendário</span></a>
+      <a href="#" data-action="tasks"><span class="material-icons">assignment</span><span class="label">Minhas Tarefas</span></a>
+      <a href="#" data-action="mail"><span class="material-icons">email</span><span class="label">E-mail</span></a>
+      <a href="#" data-action="sales"><span class="material-icons">bar_chart</span><span class="label">Vendas</span></a>
+      <a href="#" data-action="notifications"><span class="material-icons">notifications</span><span class="label">Notificações</span></a>
+    </div>
+
+    <div class="services">
+      <div class="section-title">Serviços</div>
+      <div data-action="faces"><span class="material-icons">face</span><span class="label">UI Faces</span></div>
+      <div data-action="proton"><span class="material-icons">security</span><span class="label">Proton</span></div>
+      <div data-action="ravencoin"><span class="material-icons">account_balance_wallet</span><span class="label">Ravencoin</span></div>
+      <div data-action="binance"><span class="material-icons">trending_up</span><span class="label">Binance</span></div>
+    </div>
+
+    <div class="settings">
+      <div class="section-title">Configurações</div>
+      <div data-action="preferences"><span class="material-icons">settings</span><span class="label">Preferências</span></div>
+      <div data-action="settings-notifications"><span class="material-icons">notifications_none</span><span class="label">Notificações</span></div>
+      <div data-action="theme"><span class="material-icons">dark_mode</span><span class="label">Tema</span></div>
+      <div data-action="logout"><span class="material-icons">power_settings_new</span><span class="label">Sair</span></div>
+    </div>
+
+    <div class="create-task" id="create-task-btn">
+      <span class="material-icons">add</span>
+      <span class="label">Criar nova tarefa</span>
+    </div>
+
+  </div>
+
+  <!-- Área livre para renderização respeitando a sidebar -->
+  <div id="render-area">
+    <canvas id="render-canvas"></canvas>
+  </div>
+
+  <button class="toggle-btn" id="toggleBtn">
+    <span class="material-icons">menu</span>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

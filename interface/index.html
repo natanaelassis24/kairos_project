@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Kairos Engine</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="renderCanvas"></canvas>
+
+  <!-- Botão flutuante -->
+  <button id="addSphereBtn" class="floating-button">+ Esfera</button>
+
+  <!-- Painel de propriedades da esfera -->
+  <div id="spherePanel" class="sphere-panel hidden">
+    <h2>Nova Esfera</h2>
+    <label>Massa:</label>
+    <input type="number" id="massInput" value="100">
+    
+    <label>Densidade:</label>
+    <input type="number" id="densityInput" value="1">
+    
+    <label>Raio:</label>
+    <input type="number" id="radiusInput" value="1">
+    
+    <label>Posição (x, y, z):</label>
+    <input type="number" id="posX" value="5">
+    <input type="number" id="posY" value="0">
+    <input type="number" id="posZ" value="5">
+    
+    <button id="confirmAddSphere">Adicionar</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

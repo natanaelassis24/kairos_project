@@ -1,0 +1,181 @@
+/* Variáveis para temas */
+body {
+  --bg-gradient: linear-gradient(to bottom right, #dbeafe, #1e3a8a);
+  --sidebar-bg: rgba(255, 255, 255, 0.25); /* Transparência e opacidade */
+  --sidebar-border: rgba(255, 255, 255, 0.2);
+  --text-color: white;
+  --button-bg: #3b82f6;
+  --button-bg-hover: #2563eb;
+}
+
+body.dark-theme {
+  --bg-gradient: linear-gradient(to bottom right, #121212, #1f1f1f);
+  --sidebar-bg: rgba(18, 25, 40, 0.75);
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --text-color: #ddd;
+  --button-bg: #1f2937;
+  --button-bg-hover: #374151;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg-gradient);
+  height: 100vh;
+  display: flex;
+  position: relative;
+  color: var(--text-color);
+}
+
+.sidebar {
+  width: 260px;
+  transition: width 0.3s;
+  background: var(--sidebar-bg);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px); /* Safari */
+  border-right: 1px solid var(--sidebar-border);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  transition: 0.3s;
+}
+
+.user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-text {
+  display: block;
+}
+
+.sidebar.collapsed .user-text {
+  display: none;
+}
+
+.menu, .services, .settings {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 13px;
+  margin-bottom: 10px;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.menu a, .services div, .settings div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  text-decoration: none;
+  color: var(--text-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  user-select: none;
+}
+
+.menu a:hover, .services div:hover, .settings div:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.menu a.active,
+.services div.active,
+.settings div.active {
+  background: #3b82f6 !important;
+}
+
+.material-icons {
+  font-size: 20px;
+}
+
+.sidebar.collapsed .label {
+  display: none;
+}
+
+.sidebar.collapsed .menu a,
+.sidebar.collapsed .services div,
+.sidebar.collapsed .settings div {
+  justify-content: center;
+  font-size: 14px;
+}
+
+.sidebar.collapsed .material-icons {
+  font-size: 24px;
+}
+
+.create-task {
+  margin-top: auto;
+  background: var(--button-bg);
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+  user-select: none;
+  color: var(--text-color);
+}
+
+.create-task:hover {
+  background: var(--button-bg-hover);
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 20px;
+  left: 90px;
+  background: var(--button-bg);
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 10;
+  transition: left 0.3s;
+}
+
+.sidebar:not(.collapsed) ~ .toggle-btn {
+  left: 270px;
+}
+
+/* --- NOVO: área de renderização ocupando o espaço livre ao lado da sidebar --- */
+#render-area {
+  flex: 1; /* ocupa todo espaço horizontal restante */
+  background-color: #000; /* fundo preto para render */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  z-index: 0; /* atrás da sidebar */
+}
+
+#render-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: black;
+}
